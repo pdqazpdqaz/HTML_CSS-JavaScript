@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+    </style>
+</head>
+<body>
+    <img src="http://placehold.it/320x100"><br>
+    <img src="http://placehold.it/320x100"><br>
+    <img src="http://placehold.it/320x100">
+  
+   
+    <script>
+        // Javascript로 구현        
+        const img_objs = document.getElementsByTagName('img')
+        const box_width = [100, 200, 300]
+        for (let i = 0; i < img_objs.length; i++)
+        {
+            img_objs[i].setAttribute('width', box_width[i]);
+            console.log(img_objs[i])
+
+        }
+/*
+        // JQuery로 구현        
+        $('img').attr('width', (index)=>{
+            return (index + 1) * 100
+
+        })
+       
+
+
+    // jQuery code
+
+    //이미지 주소 변수를 설정한다.
+    const imgSrc = "http://placehold.it/320x100"
+
+    //이미지 width 변수를 설정한다.
+    let imgWidth = 0  
+
+
+    //전체 알고리즘은 for문을 이용해서 해결
+    for (let i = 0; i < 3; i++) {
+
+      //for문 반복에 따라 width 변수가 증가하게 셋팅한다.
+      imgWidth += 100
+
+      //이미지 객체를 생성한다.
+      const imgObj = $("<img>")
+
+      //체이닝을 통해 이미지 객체를 생성.속성 추가를 한 번에 한다.
+      imgObj.attr({
+        src: imgSrc,
+        width: imgWidth
+      });                
+
+      //이미지 객체를 body에 추가한다.
+      $("body").append(imgObj);
+
+      //br을 생성하면서 동시에 body에 추가한다.
+      $("<br>").appendTo("body")      
+
+    }
+ 
+    //javascript로 구현
+    const imgs_obj = document.querySelectorAll('img')
+
+    imgs_obj.forEach((val, idx) => {
+        val.style.width = `${(idx + 1) * 100}px`
+    })
+*/
+
+    </script>
+</body>
+</html>

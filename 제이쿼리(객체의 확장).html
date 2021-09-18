@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+
+    <script>
+        const product = {
+            name : 'cpu',
+            vendor : 'intel',
+            price : 300,
+            price_unit : '$'
+
+        }
+        /*
+        product.color = 'white'
+        
+        //product.color라는 속성이 있다면, 변화가 없음.
+        //없다면 'none'이라고 추가.
+        //1. if문 이용
+        if(product.color === undefined)
+        {
+            product.color = 'none'
+        }
+
+        //2. 삼항연산자 이용
+        product.color = product.color || 'none'
+        */
+
+        //3. extend()사용
+        $.extend(product, 
+                {name : 'mouse', color : 'black',},
+                {getColor : function(){ return this.color }}
+        )
+            console.log(product.getColor())
+      
+
+        const json_txt = JSON.stringify(product, null, 4)
+        console.log(json_txt)
+
+        const obj = $.extend({}, {name:'kjh'}, {color:'silver'})
+        console.log(obj)
+            
+    </script>
+</body>
+</html>

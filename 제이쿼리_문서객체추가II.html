@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+    </style>
+</head>
+<body>
+
+    
+    <script>
+    $(document).ready(()=>{
+
+        //1. 이미지 태그를 추가하는 방식 I
+        $('<img />').attr('src', 'http://placehold.it/320x100').appendTo('body');
+
+        //2. 이미지 태그를 추가하는 방식 II 
+        $('body').append('<img src="http://placehold.it/320x100"/>');
+
+        //3. h1태그를 body의 뒤에 붙여보기
+        const tag_array = ['<h1>회냉면</h1>',
+                           '<h1>물냉면</h1>',
+                           '<h1>비빔냉면</h1>']
+
+        $('body').append(tag_array[0], tag_array[1], tag_array[2])
+        $('body').append('<h1>어린이돈까스</h1>')
+
+
+        //4. h1태그를 body의 앞에 붙여보기
+        $('body > h1').eq(0).prepend('<h1>메뉴판</h1>')
+
+    })
+        
+
+    </script>
+</body>
+</html>

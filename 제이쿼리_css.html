@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+        .aclass{
+            color : red;
+        }
+
+        .bclass{
+            color :hotpink;
+        }
+
+        .cclass{
+            color:khaki;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="aclass">Voluptate dexcepteur Lorem.</h1>
+    <h1 class="bclass">Culpa et amxercitation.</h1>
+    <h1 class="cclass">Eim dolore esse mollit fugiat amet.</h1>    
+      
+    <script>
+        // css 속성 얻기.
+        for (let i = 0; i < $('h1').length; i++)
+            console.log($('h1').eq(i).css('color'))
+        
+       $('h1').each((index, value)=>{
+            console.log($(value).css('color'))
+
+       })
+
+       // css 속성 설정하기
+       $('h1').eq(0).css('backgroundColor', 'black')
+
+       $('h1').css('backgroundColor', function(index) {
+           // color lookup table
+           const color_table = ['black', 'yellow', 'purple'];
+           
+           return color_table[index];
+       })
+
+       $('h1').eq(0).css({backgroundColor : 'blue'})
+           
+        
+
+
+
+    </script>
+</body>
+</html>

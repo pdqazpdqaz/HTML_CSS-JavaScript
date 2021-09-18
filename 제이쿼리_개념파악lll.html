@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <script>
+        const $ = function(tag_name)
+        {
+            const h1_obj = document.getElementsByTagName(tag_name)
+
+            const obj = {
+                elements : h1_obj,
+
+                css : function(sty, val) {
+
+                    if (sty === 'color')
+                    {
+                        //텍스트 색을 val로 바꾼다.
+                        for (let i = 0; i < this.elements.length; i++)
+                        {
+                            this.elements[i].style.color = val;
+
+                        }
+                    
+                    }
+                    return this
+                }
+                
+            }
+            return obj;
+        }
+        
+        //제이쿼리 체이닝
+        $('h1').css('color', 'red').elements.length
+    </script>
+</body>
+</html>

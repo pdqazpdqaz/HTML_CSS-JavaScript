@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+    </style>
+</head>
+<body>
+
+    <h1>Do irure anim proident qui laboris voluptate id exercitation.</h1>   
+    <h1></h1>
+    <h1></h1>
+
+    <p></p>
+    <p></p>
+    <p></p>
+      
+    <p> <b>Test</b> Paragraph.</p>
+    
+ 
+    <script>
+        /*
+        // html()을 이용하여 텍스트 정보 얻기
+        const h1_txt = $('h1').html();
+        console.log(h1_txt);
+
+        // html()을 이용하여 텍스트 정보 설정하기
+        $('h1').eq(1).html("Hello")
+
+        // html()을 이용하여 callback으로 텍스트 정보 설정하기
+        $('p').html(function(index){
+            const txt = ['마라탕','꿔바로우','가지볶음'];
+            return txt[index];
+
+        })
+        */
+
+        // text()와 html()와의 차이점.
+        let p_txt = $('p').last().text();
+        console.log(p_txt) // Test Paragraph.
+
+        p_txt = $('p').last().html();
+        console.log(p_txt) // <b>Test</b> Paragraph.
+
+        $('p').eq(0).html('hi <br> hi') 
+        $('p').eq(1).text('hi <br> hi') 
+
+    </script>
+</body>
+</html>

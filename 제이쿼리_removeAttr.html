@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+    </style>
+</head>
+<body>
+    <img src="http://placehold.it/320x100"><br>
+    <img src="http://placehold.it/320x100"><br>
+    <img src="http://placehold.it/320x100">
+  
+   
+    <script>
+        // removeAttr()
+        // JQuery로 구현        
+        $('img').attr('width', (index)=>{
+            return (index + 1) * 100
+
+        })
+
+        setTimeout(()=>{
+            $('img').removeAttr('width')
+        }, 3000)
+        
+       
+
+    </script>
+</body>
+</html>

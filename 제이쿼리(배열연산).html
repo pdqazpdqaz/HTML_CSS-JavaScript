@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+    <h1>제이쿼리</h1>
+    <h1>제이쿼리</h1>
+
+    
+
+    <script>
+       
+        
+        const domain = [
+            {name : 'naver', addr: 'https://www.naver.com'},
+            {name : 'google', addr: 'https://www.google.com'}
+        ]
+
+        
+        domain.forEach(element => {
+            let a = document.createElement('a')
+            let br = document.createElement('br')
+            
+            a.href = element.addr
+            a.textContent = element.name
+            
+            document.body.appendChild(a)
+            document.body.appendChild(br)
+        })
+        
+
+       
+        $.each(domain, (index)=>{
+            let a = document.createElement('a')
+            let br = document.createElement('br')
+
+            a.href = domain[index].addr
+            a.textContent = domain[index].name
+            
+            document.body.appendChild(a)
+            document.body.appendChild(br)
+        })
+
+        $('h1').each((index, item)=>{
+            console.log(item.textContent)
+        })
+        
+
+    </script>
+</body>
+</html>

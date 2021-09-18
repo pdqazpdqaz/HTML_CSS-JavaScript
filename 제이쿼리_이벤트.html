@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        .toggle{
+            background: black;
+            color:white;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Header-0</h1>
+    <h1>Header-1</h1>
+    <h1>Header-2</h1>
+
+    <script>
+      //제이쿼리 이벤트
+      // on()
+      // $(selector).on(eventName, function(event){})
+      // $(selector).on(object)
+
+      // keyup()
+      // click()
+      // dbclick()
+      // ready()
+
+      //웹 element의 상태를 바꾸는 것이 이벤트다.?? 명사로 끝나야한다고 했는데 뭐지?
+      
+      //<DOM>
+      //이벤트의 종류
+      //1. 입력장치 이벤트
+      //    마우스 이벤트
+      //    키보드 이벤트
+      //    
+
+      //2. 엘리먼트 이벤트
+      //    엘리먼트마다 발생하는 고유 이벤트
+      //    ex> 이미지 태그에서 이미지가 로딩되었다.
+
+      //3. 사용자정의 이벤트
+      //    개발자가 직접 이벤트를 억지로 만들 수 있다.
+      
+      //---------------------------
+
+      //<BOM>
+      //브라우저 윈도우 관련된 다양한 메시지 있음
+
+      //---------------------------
+
+      //이벤트에는 단계가 있다.
+      //이벤트 단계(절차/흐름)
+      //1. 캡처 - addEventListener(이벤트, 함수)
+      //2. 타겟 - 
+      //3. 버블링
+
+        
+        // 1> 기본적인 메시지 바인딩.
+        /*
+        $('h1').on('click', function(){
+            let text = $(this).text() + '♥';
+            $(this).text(text);
+            
+        })
+        
+        // 2> 멋진하트 메시지 바인딩!
+         $("h1").on("click", function() {
+            $(this).append($("<span>♥</span>").css("color", "red"))
+        })
+*/
+        
+        // 3> 객체를 이용한 이벤트 핸들러 바인딩
+        
+        $('h1').on({
+            mouseenter : function(){ $(this).addClass('toggle') },  
+            mouseleave : function(){ $(this).removeClass('toggle') }          
+            //mouseenter: function(){$(this).toggleClass( "toggle" )},
+            //mouseleave: function(){$(this).toggleClass( "toggle" )}
+        })
+        
+
+        // 4> 이벤트 핸들어의 언바인딩
+        //setTimeout(()=>{$('h1').off()}, 5000)
+        //$('h1').off()       //h1의 모든 이벤트 핸들러가 언바인딩
+        //setTimeout(()=>{$('h1').off('click')}, 5000)
+        //$('h1').off('click')
+
+        // 5> 심플하게 처리하는 방식
+        $('h1').click((event)=>{
+            console.log("click")        
+            
+        })
+
+        
+    </script>
+
+</body>
+</html>

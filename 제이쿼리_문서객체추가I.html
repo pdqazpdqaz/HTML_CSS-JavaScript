@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+    </style>
+</head>
+<body>
+    <h2>Greetings</h2>
+    <div class="container">
+        <div class="inner">Hello</div>
+        <div class="inner">Goodbye</div>
+    </div>
+    
+    
+    <script>
+    $(document).ready(()=>{
+
+        //1. 문서객체 만들기
+        const h1_element = $('<h1></h1>');
+
+        //2. 문서객체 설정하기
+        h1_element.html('안녕하세요')
+
+        //3. 문서객체를 body에 붙이기(DOM)
+        h1_element.appendTo('body')
+
+        //4. 체이닝 하기
+        $('<h2></h2>').html('반갑습니다.').appendTo('body')
+
+        //5. 다중추가
+        $('<p>Test</p>').appendTo('.inner');
+
+    })
+        
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <style>
+    </style>
+</head>
+<body>
+    <input type="button" value="OK">
+    <input type="text" value="Cancle">
+
+
+    
+    
+     
+    <script>
+        // 속성값을 얻어오기
+        // $() 객체가 복수인 경우 첫번째 엘리먼트의 속성값을 가지고 온다.
+        console.log($('input').attr('type'))
+        console.log($('input').attr('value'))
+        console.log($('input').eq(1).attr('type'))
+        console.log($('input').eq(1).attr('value'))
+
+
+        // 속성에다 값을 넣기
+        // 값을 이용한 속성 변경
+        $('input').attr('value', 'test')
+
+        // 값을 이용한 속성 변경/추가
+        $('input').first().attr('name', 'ok')
+
+
+        //콜백함수를 이용한 속성을 변경/추가
+        $('input').attr('value', (index)=>{
+            return 'value-' + index
+        })
+
+        //오브젝트를 통한 속성변경/추가
+        $('input').eq(0).attr({
+            type: "button",
+            value : "OK"
+
+        })
+
+        $('input').eq(1).attr({
+            type: "text",
+            value : "Cancle"
+
+        })
+
+    </script>
+</body>
+</html>
