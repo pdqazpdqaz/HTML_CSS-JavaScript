@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#title").css("color","red"); //id선택자를 통해 스타일을 적용
+            $("#tit").css("background-color","#ff0").css("border", "2px solid #f00");
+            //체이닝 기법으로 선택한 요소의 css메서드를 연속해서 2회 적용
+        });
+    </script>
+</head>
+<body>
+    <h1 id="title"> 제목 </h1>
+    <h2 id="tit">선택자</h2>
+</body>
+</html>
